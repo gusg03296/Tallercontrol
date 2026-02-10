@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Auto</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #111, #222);
+      color: white;
+    }
+
+    header {
+      background: black;
+      padding: 20px;
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      border-bottom: 2px solid orange;
+    }
+
+    .form-container {
+      padding: 25px;
+    }
+
+    label {
+      font-size: 18px;
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      color: orange;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      outline: none;
+      background: #333;
+      color: white;
+    }
+
+    textarea {
+      resize: none;
+      height: 90px;
+    }
+
+    .btn {
+      margin-top: 25px;
+      width: 100%;
+      padding: 18px;
+      font-size: 22px;
+      font-weight: bold;
+      border: none;
+      border-radius: 15px;
+      background: orange;
+      color: black;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #ffb300;
+      transform: scale(1.02);
+    }
+
+    .back {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      opacity: 0.8;
+    }
+
+    .back:hover {
+      opacity: 1;
+      color: orange;
+    }
+  </style>
+</head>
+
+<body>
+
+header>📝 Registrar Auto</header>
+<div class="container">
+<form method="POST" enctype="multipart/form-data">
+<label>Cliente</label>
+<input type="text" name="cliente" required>
+<label>Teléfono</label>
+<input type="text" name="telefono" required>
+<label>Marca/Modelo</label>
+<input type="text" name="marca" required>
+<label>Placas</label>
+<input type="text" name="placas" required>
+<label>Daño/Trabajo</label>
+<input type="text" name="dano" required>
+<label>Fecha de Entrada</label>
+<input type="date" name="fecha" required>
+<label>📸 Foto del Auto</label>
+<input type="file" name="foto" accept="image/*" required>
+<button class="btn" type="submit">Guardar Auto</button>
+</form>
+<a class="back" href="/">⬅ Volver al Menú</a>
+</div>
+</body>
+</html>
+

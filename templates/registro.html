@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Auto</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: linear-gradient(#111, #222);
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      background: black;
+      padding: 25px;
+      font-size: 35px;
+      font-weight: bold;
+      color: orange;
+      border-bottom: 3px solid orange;
+    }
+
+    .card {
+      background: #1c1c1c;
+      margin: 25px auto;
+      padding: 30px;
+      width: 90%;
+      max-width: 450px;
+      border-radius: 25px;
+      box-shadow: 0 0 20px black;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      font-size: 22px;
+      margin-top: 20px;
+      font-weight: bold;
+      color: orange;
+    }
+
+    input {
+      width: 95%;
+      padding: 18px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 15px;
+      font-size: 20px;
+      outline: none;
+    }
+
+    input:focus {
+      border: 2px solid orange;
+    }
+
+    button {
+      margin-top: 30px;
+      width: 100%;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      border: none;
+      border-radius: 18px;
+      background: orange;
+      color: black;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    .back {
+      display: block;
+      margin-top: 25px;
+      font-size: 20px;
+      text-decoration: none;
+      color: white;
+      opacity: 0.7;
+    }
+
+    .back:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>🚗 Registrar Auto</header>
+
+  <div class="card">
+
+    <form method="POST">
+
+      <label>👤 Cliente</label>
+      <input type="text" name="cliente" placeholder="Ej: Juan Pérez" required>
+
+      <label>🚘 Carro</label>
+      <input type="text" name="carro" placeholder="Ej: Nissan Versa 2020" required>
+
+      <label>🔢 Placas</label>
+      <input type="text" name="placas" placeholder="Ej: ABC-123" required>
+
+      <button type="submit">✅ Guardar Auto</button>
+
+    </form>
+
+    <a class="back" href="/">⬅ Volver al menú</a>
+
+  </div>
+
+</body>
+</html>

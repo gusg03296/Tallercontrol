@@ -1,0 +1,63 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contabilidad</title>
+<style>
+body{margin:0; font-family:Arial; background:linear-gradient(#111,#222); color:white;}
+header{padding:20px; text-align:center; font-size:26px; font-weight:bold; background:black; border-bottom:2px solid orange;}
+.container{padding:20px;}
+.resumen{background:#1e1e1e; padding:20px; border-radius:18px; margin-bottom:20px; border-left:6px solid orange;}
+.resumen h2{margin:0;color:orange;}
+.resumen p{font-size:18px; margin:8px 0;}
+label{display:block; margin-top:10px; color:orange; font-weight:bold;}
+input,select{width:100%; padding:14px; margin-top:5px; border-radius:12px; border:none; font-size:18px; background:#333; color:white;}
+.btn{width:100%; padding:16px; margin-top:15px; font-size:20px; font-weight:bold; border:none; border-radius:15px; background:orange; color:black; cursor:pointer;}
+.card{background:#1e1e1e; margin-top:15px; padding:15px; border-radius:18px; border-left:6px solid #00ff99;}
+.card.gasto{border-left:6px solid red;}
+.back{display:block; margin-top:25px; text-align:center; color:white; text-decoration:none; opacity:0.8;}
+</style>
+</head>
+<body>
+<header>💰 Contabilidad del Taller</header>
+<div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px;">
+
+  <button class="btn" style="background:#00ff99;"
+    onclick="document.querySelector('[name=tipo]').value='Ingreso'">
+    ➕ Ingreso
+  </button>
+
+  <button class="btn" style="background:red; color:white;"
+    onclick="document.querySelector('[name=tipo]').value='Gasto'">
+    ➖ Gasto
+  </button>
+
+</div>
+
+<div class="container">
+div class="resumen">
+<h2>📊 Resumen General</h2>
+<p>✅ Ingresos: ${{ ingresos }}</p>
+<p>❌ Gastos: ${{ gastos }}</p>
+<p>💵 Ganancia: ${{ ganancia }}</p>
+</div>
+<form method="POST">
+<label>Tipo</label><select name="tipo" required><option value="Ingreso">Ingreso</option><option value="Gasto">Gasto</option></select>
+<label>Concepto</label><input type="text" name="concepto" placeholder="Ej: Reparación Versa" required>
+<label>Monto ($)</label><input type="number" step="0.01" name="monto" required>
+<label>Fecha</label><input type="date" name="fecha" required>
+<button class="btn" type="submit">➕ Registrar Movimiento</button>
+</form>
+<hr style="margin:25px 0; opacity:0.3;">
+{% for mov in movimientos %}
+<div class="card {% if mov[1]=='Gasto' %}gasto{% endif %}">
+<h3>{{ mov[1] }} - ${{ mov[3] }}</h3>
+<p>📌 {{ mov[2] }}</p>
+<p>📅 {{ mov[4] }}</p>
+</div>
+{% endfor %}
+<a class="back" href="/">⬅ Volver al menú</a>
+</div>
+</body>
+</html>

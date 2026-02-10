@@ -1,0 +1,46 @@
+cp /mnt/data/A_digital_vector_logo_icon_for_an_automotive_repai.png /data/data/com.termux/files/home/tallercontrol/static/icono.png
+/* ===== Estilo general del body ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#111, #222);
+  color: white;
+  text-align: center;
+}
+
+/* ===== Logo ===== */
+#logo {
+  width: 120px;           /* tamaño del logo */
+  margin-top: 20px;
+  border-radius: 20px;    /* bordes redondeados */
+  border: 3px solid orange; /* borde naranja pro */
+}
+
+/* ===== Título principal ===== */
+h1 {
+  padding: 25px;
+  color: orange;
+  font-size: 48px;       /* letra grande pro */
+  font-weight: bold;
+}
+
+/* ===== Botones del menú ===== */
+.menu button {
+  width: 90%;
+  padding: 25px;         /* botón grande */
+  margin: 15px;
+  font-size: 24px;       /* letra grande */
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;   /* redondeado pro */
+  background: orange;
+  color: black;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* ===== Efecto hover ===== */
+.menu button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}

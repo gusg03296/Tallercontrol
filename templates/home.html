@@ -1,0 +1,53 @@
+<DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TallerControl Pro</title>
+<link rel="manifest" href="/static/manifest.json">
+<meta name="theme-color" content="#ff9900">
+<style>
+<body {
+  margin:0;
+  font-family:Arial;
+  background:linear-gradient(#111,#222);
+  color:white;
+  text-align:center;
+}
+
+<h1 {
+  padding:25px;
+  color:orange;
+  font-size:48px; /* letra grande pro */
+  font-weight:bold;
+}
+
+.menu button {
+  width:90%;
+  padding:25px;
+  margin:15px;
+  font-size:24px; /* letra grande pro */
+  font-weight:bold;
+  border:none;
+  border-radius:20px;
+  background:orange;
+  color:black;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.menu button:hover {
+  transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+<h1>🚗 TallerControl Pro</h1>
+<div class="menu">
+<button onclick="location.href='/registro'">📝 Registrar Auto</button>
+<button onclick="location.href='/autos'">📋 Autos</button>
+<button onclick="location.href='/inventario'">📦 Inventario</button>
+<button onclick="location.href='/contabilidad'">💰 Contabilidad</button>
+</div>
+</body>
+</html>

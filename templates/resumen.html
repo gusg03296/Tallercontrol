@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resumen Diario</title>
+
+<style>
+
+</style>
+</head>
+
+<body>
+
+<header>📊 Resumen del Día</header>
+
+<h2 style="margin-top:20px;">📅 Fecha: {{ fecha }}</h2>
+
+<div class="card ingreso">
+  ✅ Ingresos Hoy: <br>
+  <b>${{ ingresos }}</b>
+</div>
+
+<div class="card gasto">
+  ❌ Gastos Hoy: <br>
+  <b>${{ gastos }}</b>
+</div>
+
+<div class="card ganancia">
+  💰 Ganancia Real: <br>
+  <b>${{ ganancia }}</b>
+</div>
+
+<button class="btn" onclick="location.href='/contabilidad'">
+➕ Agregar Movimiento
+</button>
+
+<a class="back" href="/">⬅ Volver al Menú</a>
+
+</body>
+</html>
+

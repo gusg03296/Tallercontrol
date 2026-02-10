@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventario</title>
+<style>
+body{margin:0; font-family:Arial; background:linear-gradient(#111,#222); color:white;}
+header{padding:20px; text-align:center; font-size:26px; font-weight:bold; background:black; border-bottom:2px solid orange;}
+.container{padding:20px;}
+label{display:block; margin-top:10px; color:orange; font-weight:bold;}
+input{width:100%; padding:14px; margin-top:5px; border-radius:12px; border:none; font-size:18px; background:#333; color:white;}
+.btn{width:100%; padding:16px; margin-top:15px; font-size:20px; font-weight:bold; border:none; border-radius:15px; background:orange; color:black; cursor:pointer;}
+.card{background:#1e1e1e; margin-top:20px; padding:15px; border-radius:18px; border-left:6px solid orange;}
+.card h2{margin:0; color:orange;}
+.delete{margin-top:10px; display:inline-block; padding:10px 15px; border-radius:12px; background:red; color:white; text-decoration:none; font-weight:bold;}
+.back{display:block; margin-top:25px; text-align:center; color:white; text-decoration:none; opacity:0.8;}
+</style>
+</head>
+<body>
+<header>📦 Inventario del Taller</header>
+<div class="container">
+<form method="POST">
+<label>Producto</label><input type="text" name="producto" placeholder="Ej: Pintura roja" required>
+<label>Cantidad</label><input type="number" name="cantidad" placeholder="Ej: 5" required>
+<label>Precio ($)label><input type="number" step="0.01" name="precio" placeholder="Ej: 250" required>
+button class="btn" type="submit">➕ Agregar Producto</button>
+</form>
+<hr style="margin:25px 0; opacity:0.3;">
+{% for item in productos %}
+<div class="card">
+<h2>{{ item[1] }}</h2>
+<p>📦 Cantidad: {{ item[2] }}</p>
+<p>💰 Precio: ${{ item[3] }}</p>
+<a class="delete" href="/inventario/eliminar/{{ item[0] }}">❌ Eliminar</a>
+</div>
+{% endfor %}
+<a class="back" href="/">⬅ Volver al menú</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autos</title>
+<style>
+body{margin:0; font-family:Arial; background:linear-gradient(#111,#222); color:white;}
+header{background:black; padding:20px; text-align:center; font-size:26px; font-weight:bold; border-bottom:2px solid orange;}
+.container{padding:20px;}
+.card{background:#1e1e1e; border-radius:18px; padding:18px; margin-bottom:18px; border-left:6px solid orange;}
+.card h2{margin:0; font-size:22px; color:orange;}
+.info{margin-top:8px; font-size:17px; opacity:0.9;}
+.estado{margin-top:10px; font-size:16px; font-weight:bold; color:#00ff99;}
+.btns{margin-top:15px; display:flex; flex-wrap:wrap; gap:10px;}
+.btn{flex:1; padding:12px; border:none; border-radius:12px; font-size:16px; font-weight:bold; cursor:pointer; transition:0.2s;}
+.btn-listo{background:orange; color:black;}
+.btn-entregado{background:#00c853; color:white;}
+.btn-eliminar{background:#d50000; color:white;}
+.btn-whatsapp{background:#25D366; color:white;}
+.btn:hover{transform:scale(1.03); opacity:0.9;}
+.back{display:block; margin-top:25px; text-align:center; font-size:18px; text-decoration:none; color:white; opacity:0.8;}
+.vacio{text-align:center; margin-top:50px; font-size:20px; opacity:0.7;}
+img{width:100%; max-height:220px; object-fit:cover; margin-top:12px; border-radius:18px; border:2px solid orange;}
+</style>
+</head>
+<body>
+<header>📋 Autos en Proceso</header>
+<div class="container">
+{% if autos|length==0 %}<p class="vacio">🚗 No hay autos registrados...</p>{% endif %}
+{% for auto in autos %}
+<div class="card">
+h2>{{ auto[3] }} - {{ auto[1] }}</h2>
+{% if auto[8] %}<img src="/static/fotos/{{ auto[8] }}">{% endif %}
+<p class="info">📞 Tel: {{ auto[2] }}</p>
+<p class="info">🔢 Placas: {{ auto[4] }}</p>
+<p class="info">🛠 Daño: {{ auto[5] }}</p>
+<p class="info">📅 Entrada: {{ auto[6] }}</p>
+<p class="estado">Estado: {{ auto[7] }}</p>
+<div class="btns">
+<button class="btn btn-listo" onclick="location.href='/estado/{{ auto[0] }}/Listo'">✅ Listo</button>
+<button class="btn btn-entregado" onclick="location.href='/estado/{{ auto[0] }}/Entregado'">📦 Entregado</button>
+<button class="btn btn-eliminar" onclick="location.href='/eliminar/{{ auto[0] }}'">❌ Eliminar</button>
+<button class="btn btn-whatsapp" onclick="window.open('https://wa.me/52{{ auto[2] }}?text=Hola%20{{ auto[1] }},%20tu%20auto%20ya%20está%20LISTO%20🚗✅')">📲 WhatsApp</button>
+</div>
+</div>
+{% endfor %}
+<a class="back" href="/">⬅ Volver al Menú</a>
+</div>
+</body>
+</html>
