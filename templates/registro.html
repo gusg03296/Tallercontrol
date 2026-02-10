@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registrar Auto</title>
-
+<link rel="stylesheet" href="/static/style.css">
+  
   <style>
     body {
       margin: 0;
@@ -92,27 +93,21 @@
 
 <body>
 
-  <header>🚗 Registrar Auto</header>
+<header>🚗 Registrar Auto</header>
 
-  <div class="card">
+<div class="card">
+<form method="POST">
 
-    <form method="POST">
+<input name="cliente" placeholder="Cliente" required>
+<input name="carro" placeholder="Carro" required>
+<input name="placas" placeholder="Placas" required>
 
-      <label>👤 Cliente</label>
-      <input type="text" name="cliente" placeholder="Ej: Juan Pérez" required>
+<button>✅ Guardar</button>
+</form>
 
-      <label>🚘 Carro</label>
-      <input type="text" name="carro" placeholder="Ej: Nissan Versa 2020" required>
-
-      <label>🔢 Placas</label>
-      <input type="text" name="placas" placeholder="Ej: ABC-123" required>
-
-      <button type="submit">✅ Guardar Auto</button>
-
-    </form>
-
-    <a class="back" href="/">⬅ Volver al menú</a>
-
+<a href="/">⬅ Volver</a>
+</div>
+  
   </div>
 
 </body>
