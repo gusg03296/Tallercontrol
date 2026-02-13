@@ -1,7 +1,4 @@
 # Tallercontrol
 # Tallercontrol
-# Tallercontrol
-# Tallercontrol
-# Tallercontrol
-# Tallercontrol
-# Tallercontrol
+# CONTROL DE MATERIAL 
+SOMOS UN RESPALDO PARA TU EMPRESA 
